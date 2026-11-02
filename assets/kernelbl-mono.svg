@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">KBL — Core / Flow 08 — Rose Light Clean</title><desc id="desc">A geometric K microkernel emblem with a core junction, chip contacts and segmented data orbits. Original editable vector artwork.</desc>
+  
+  <g fill="currentColor" data-part="unified-orbits"><path d="M111.08039 123.15335A196.25 196.25 0 0 1 422.85790 153.64734A4.5 4.5 0 1 1 420.71107 154.92870A193.75 193.75 0 0 0 112.91961 124.84665A1.25 1.25 0 0 1 111.08039 123.15335Z" data-part="upper-orbit-with-terminal" /><path d="M439.21785 323.28168A196.25 196.25 0 0 1 147.02682 447.32992A4.5 4.5 0 1 1 148.33691 445.20050A193.75 193.75 0 0 0 436.78215 322.71832A1.25 1.25 0 0 1 439.21785 323.28168Z" data-part="lower-orbit-with-terminal" /></g><g transform="translate(-30.72 -30.72) scale(1.12)">
+      <g fill="none" stroke="currentColor" stroke-width="4" opacity=".68"><path d="M86 198H112M86 256H112M86 314H112" /></g>
+      <g fill="currentColor" opacity=".8"><rect x="80" y="194" width="8" height="8" rx="1.5" /><rect x="80" y="252" width="8" height="8" rx="1.5" /><rect x="80" y="310" width="8" height="8" rx="1.5" /></g>
+      <g fill="currentColor"><path d="M124 100H168V412H124L112 400V112Z" />
+      <path d="M196 218 314 100H394L254 240H196Z" />
+      <path d="M196 272H254L394 412H314L196 294Z" /></g>
+      <path d="M168 256H202" fill="none" stroke="currentColor" stroke-width="6" />
+      <path d="M214 244 226 256 214 268 202 256Z" fill="currentColor" />
+      <g transform="translate(324 225.2) scale(1.4)" fill="currentColor"><path d="M0 0H18L28 8V18L23 22L28 26V36L20 44H0ZM8 8V18H17L20 15V11L17 8ZM8 26V36H18L20 33V29L17 26Z" fill-rule="evenodd" /><path d="M39 0H47V36H65V44H39Z" /></g>
+    </g>
+</svg>

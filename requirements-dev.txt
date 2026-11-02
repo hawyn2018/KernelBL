@@ -1,0 +1,4 @@
+# Versions used for this standalone source package's local validation.
+pefile==2024.8.26
+pyelftools==0.33
+unicorn==2.1.4

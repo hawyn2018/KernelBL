@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "sourceVersion": "hnubl 2.9.2",
+  "host": "Windows",
+  "python": "3.12.10",
+  "crossCompiler": "Android NDK r29 Clang/LLD",
+  "standaloneTargets": [
+    "driver",
+    "parent",
+    "recovery",
+    "sdk-demo",
+    "sdk-port",
+    "efi-apps",
+    "bundle"
+  ],
+  "driverSha256": "71570bc527edbecffdab4fe5cabc0e10d7b954daacc0a8e344892a7b33468a12",
+  "driverByteIdenticalToHnubl": true,
+  "controllerCases": 39,
+  "fetchCases": 21,
+  "elfHostCases": 14,
+  "elfUnicornCases": 17,
+  "driverHostCases": 18,
+  "driverHostAssertions": 908,
+  "driverArm64PeCases": 2,
+  "nativeUsbModelCases": 3,
+  "driverAdapterHostChecks": 53,
+  "driverAdapterArm64Compilation": true,
+  "deviceOperations": false,
+  "newHardwarePortClaimed": false,
+  "limitations": "Host provider models and ARM64 emulation do not establish a new board's firmware/USB/DMA integration."
+}

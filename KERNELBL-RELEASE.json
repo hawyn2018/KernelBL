@@ -16,7 +16,7 @@
     {
       "path": "README.md",
       "beforeSha256": "096f9dc9751e6ac4598fc30b8c3b12aeb78b5b28cef0f00d408e4aaf63010c5a",
-      "afterSha256": "625fdcf7f7f19d07905aefda410be6fb245e371f417aa43a4223c814f91514cd"
+      "afterSha256": "ebc3a703c9c67636e801b7ae07408182e33460ca900138d66c0f79e3f3ccd4c9"
     },
     {
       "path": "runtime/adb/README.md",

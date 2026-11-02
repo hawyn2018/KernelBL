@@ -10,7 +10,11 @@
 
 **KernelBL（KBL）** 是运行在 ARM64 bootloader / UEFI 环境中的轻量协作式运行时。它沿用当前异常级（EL），提供引导阶段的交互命令台、文件与分区访问、程序运行和固件调试接口。只有显式请求才启动 KBL；ADB 另由显式命令启用。
 
+目前适用于搭载高通骁龙 8e5 芯片、且 ABL 支持免验证加载 efisp 的设备；将 KernelBL 嵌入 efisp，并保留 efisp 原有功能后使用。
+
 **KernelBL (KBL)** is a small cooperative runtime inside an ARM64 bootloader / UEFI environment. It stays at the current exception level and provides an interactive console, file and partition access, program execution, and firmware debugging interfaces. KBL and its ADB transport are started explicitly.
+
+Currently intended for Qualcomm Snapdragon 8e5 devices whose ABL supports loading efisp without signature verification. Integrate KernelBL into efisp while retaining efisp's existing functionality.
 
 | 能力 / Capability | 功能 / What it provides |
 | --- | --- |

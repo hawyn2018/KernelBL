@@ -1,174 +1,218 @@
 {
-  "changedOriginalFiles": [
+  "runtimeSource": "hnubl 3.0.5 (KBL runtime from hnubl 3.0.2)",
+  "standaloneBase": "028c11e94245a2cf06f4e93d55f617b8a9e3dbfb",
+  "runtimeFiles": [
     {
-      "path": "runtime/adb/tests/test_capacity.py",
-      "beforeSha256": "9f0e1958247e48a7f17d728d4da7cd523055615cfb60aa0615585e20bbabafbb",
-      "afterSha256": "cc3d6c9b8a6b3d724a12b8eeb8df01f953fd40976e0c14a3a344c18d292c1d14"
+      "path": "runtime/native/kbl_efi_command.inc",
+      "beforeSha256": "9d7af1614312c6780280a26c2de740a0ffd78e61279d0143724d801c9bbc9326",
+      "hnublSha256": "d8bc6927d69d22d835040afea84b6be26df8d7bd8e912c0a057b6fe44c085fff",
+      "afterSha256": "d8bc6927d69d22d835040afea84b6be26df8d7bd8e912c0a057b6fe44c085fff"
     },
     {
-      "path": "runtime/adb/tests/test_mounted_fat.py",
-      "beforeSha256": "06ac60dba605ec776f0a535423ca37cd526e97fa106a09a2b63742d425130951",
-      "afterSha256": "a762064ee06a36d09c7f75d25bb0ab1390ba36fc49a492035397d7115534f700"
+      "path": "runtime/native/kbl_native.c",
+      "beforeSha256": "879b5e1854c8a6f1329a530382cc330bef6d2c7dcb5b715bb35874ad43ca56ff",
+      "hnublSha256": "1543ef4ad11e1bf2f4d9dc295038e64c53eee407bc5d2bab5adda7b1e014848c",
+      "afterSha256": "1543ef4ad11e1bf2f4d9dc295038e64c53eee407bc5d2bab5adda7b1e014848c"
     },
     {
-      "path": "runtime/adb/tests/test_multi.py",
-      "beforeSha256": "9d01a8a32120c69db77fe2a7b360e8f3c1219d5b704f38e9921e7ad544f38f98",
-      "afterSha256": "cfa01b5ff08e760981910f0d9829e0249ed935ea250b4606b39def12571d6216"
+      "path": "runtime/native/kbl_native.h",
+      "beforeSha256": "ac2a4c066306e9a0de99f69acd1b8513d95f71713ae6383734d491cecf3a4a1d",
+      "hnublSha256": "ba8fdcdcaf70de84f5a69a0fbc3d8a32016d3ea8de38d719cc61de297f3dcf46",
+      "afterSha256": "f53c74cc936bb52a0e055303e11a507d4c0779bbb7cfe44a2d8dbd2b1a9a70b0"
     },
     {
-      "path": "runtime/adb/tests/test_park.py",
-      "beforeSha256": "e3431f55e1040b42c6679b0155de7deef81cdc5b056130acf91f099b7593f4f3",
-      "afterSha256": "3011837ccd15ca0401870a169d52ca8db8a491d04225344ff9628340b75604dd"
+      "path": "runtime/native/tests/native_fixture.c",
+      "beforeSha256": "c059fcc0bac2a782c24e28329e7a86eccacbd9cd0903932502ec62ba7e1ab530",
+      "hnublSha256": "8c71ba44920c02c95d2265d515ef8d23463ea69349dae339aad135c1e8819a9e",
+      "afterSha256": "8c71ba44920c02c95d2265d515ef8d23463ea69349dae339aad135c1e8819a9e"
     },
     {
-      "path": "runtime/adb/tests/test_server.py",
-      "beforeSha256": "a1defe4101ee45cb27303418529eba347bc8976efc02f0892fd3450f95288f9e",
-      "afterSha256": "21779891497127b328a0a7c6627fafbada754c1c6c1edf0198d3634d95b09875"
+      "path": "runtime/uefi/boot_recovery.S",
+      "beforeSha256": "b1d785e93eb5d8a4b7de7f80d5a5e1e2d312deefaf3e3228de5ac92ed6f8b04b",
+      "hnublSha256": "a87626174eed696df5c6e61927fea9055837dcfc392e1a360498648c462da8d8",
+      "afterSha256": "a87626174eed696df5c6e61927fea9055837dcfc392e1a360498648c462da8d8"
     },
     {
-      "path": "runtime/native/tests/run_mount.py",
-      "beforeSha256": "97324554c77ba7d0ddbce5bdafdc985f0a966b90d84169751a0330338abf6503",
-      "afterSha256": "a4aa809cbbce390c6efa603efd6eb2423c2af8f1f8475a49fc59ca85896d5ba2"
+      "path": "runtime/uefi/boot_recovery.c",
+      "beforeSha256": "6387b2b2c984b1eb66bc7fc06bb53067408045130e8217252d782c4442433831",
+      "hnublSha256": "2a6bbd2d5bb89036b47edad6816637d734ba06a638fe63901ffe5b71aedddff3",
+      "afterSha256": "2a6bbd2d5bb89036b47edad6816637d734ba06a638fe63901ffe5b71aedddff3"
     },
     {
-      "path": "runtime/native/tests/run_mount_f2fs.py",
-      "beforeSha256": "49d70073ae3bd3e0e93517c829e79cbb652ac3449df1f628ae64634f22453d53",
-      "afterSha256": "9e9e0530d8c1c82919c89bf1ed2da3aadac9524f7f2078a893c52d50c9a8070d"
-    },
-    {
-      "path": "runtime/native/tests/run_vfs.py",
-      "beforeSha256": "110b83a0f2dfa869fa06a0d12894366bfea611b953c45a4682dbb4f83c05b5a3",
-      "afterSha256": "b47e576015da282474335456d9ba505c234cf4112f6e48ed3224b9ee76e3fa64"
-    },
-    {
-      "path": "runtime/test_elf_runner.py",
-      "beforeSha256": "420acf7ab480b051b019fb98473fe54625b00e16e7d6790df570582378d6777c",
-      "afterSha256": "c9753c74c70d6c081d1b56bcbd2fc82b2bd6e2909113188d2d06f24887225fc3"
-    },
-    {
-      "path": "runtime/test_runner.py",
-      "beforeSha256": "eeb9d2786bb9efa391c326bab15c816bf87568e15bb9ffc7066a0a3d611d0a04",
-      "afterSha256": "ad84ea8baea99f5d8aecf3af62769bca66afa22e5b2183ed6d42e10d9368fc26"
-    },
-    {
-      "path": "runtime/tests/fastboot_tcp_control.py",
-      "beforeSha256": "7570033a592b22a12eaf1d05d9560d5af134d3d46eef8503cb7c138fa4953421",
-      "afterSha256": "c9a9cdb2bee8c4b620cf696ff52ffcda3cade02880d4946c2f727dd7e0bb16bf"
-    },
-    {
-      "path": "runtime/tests/fastboot_tcp_fetch.py",
-      "beforeSha256": "5c4e45d9dbbfcbf3e8ba19d8a6a30f0f4615d1027725618e3a0e31c508b0f457",
-      "afterSha256": "f841e3132484470d2afdfeff22510989a07d9d087b6e3efc09d6470d89eed046"
-    },
-    {
-      "path": "runtime/tests/run_partition_sha.py",
-      "beforeSha256": "29cecce9e6fd3b87763eb951ca412a9f0fb1c500f9bac137ece3f0e158ea9d18",
-      "afterSha256": "84f3b8f17e720dea66285e82d43bf13a316f402bac0e242c6d536e0e145f44bf"
+      "path": "runtime/uefi/boot_recovery.h",
+      "beforeSha256": "6d9d8a8d61d36ed98a9761b271ac8106582368c0e8151eea5b007768bdb67eba",
+      "hnublSha256": "9a65b626f52f1d899c5a4e30302370c0f84447c5a53108b186a1d3ea6a93e9a8",
+      "afterSha256": "9a65b626f52f1d899c5a4e30302370c0f84447c5a53108b186a1d3ea6a93e9a8"
     },
     {
       "path": "runtime/uefi/build_boot_recovery.py",
-      "beforeSha256": "440051fd405c54c5e0f6dfd9a78094cd42274a7642b13a458bfb5ac99f1a2545",
-      "afterSha256": "b438e7ebd2f6fab7aea4860fabf2f770f61698a761523f3fb657b81abb0812e0"
+      "beforeSha256": "b438e7ebd2f6fab7aea4860fabf2f770f61698a761523f3fb657b81abb0812e0",
+      "hnublSha256": "7c41c1fd2924c582a69f88452a4b0f666b916a9f2b741b7997717279c9d14e3b",
+      "afterSha256": "5c48ea8d2d2d1da9a2748ee12a6534c086ec6d5e51314bf3cde498a66def8e51"
     },
     {
-      "path": "runtime/uefi/build_parent_shim.py",
-      "beforeSha256": "963ba18fd8800f7ce2c80f9c48bd8f17655c09ada2cf27af7de76cdf8a07dde7",
-      "afterSha256": "107123a11a0ad93e022181ab571b6e158e4135d05ba35f91ac8cf241e1db5253"
+      "path": "runtime/uefi/build_driver.py",
+      "beforeSha256": "af5b46febc35beb2020c5e76221bcd619d3ec8e2b37f61f9f0f7e06143e44210",
+      "hnublSha256": "c3ea41f72796244ff5a2cf6b1899df987b070aa49dd1304bdb4c1a21a5bab259",
+      "afterSha256": "cb507e6e21b160b244818b29aae6a0d3c2525ac59a4be9ac84f5fd932c9fc3af"
     },
     {
-      "path": "runtime/uefi/bundle_driver.py",
-      "beforeSha256": "2ef80af9cab60d5c45b1c2ec2ab73d0e562e7b5d8edee9d55129f1c9e8cd6b3a",
-      "afterSha256": "ffe6d5a5df45d1f05366c7ea8a92fb5d61eaeb9871fcaa42dbc75e9d904c5c20"
+      "path": "runtime/uefi/kbl_adb_driver.inc",
+      "beforeSha256": "d7939c1c301d68a151bf85cb68ac4f73930c870726a118e7d06c181232169114",
+      "hnublSha256": "f503339d147bea0ed79c3024a2e080cfbffff45297311dfb3efdb58c522b68ef",
+      "afterSha256": "c46e982e30600b6b63ddfe448333a1258d960c999e59eb82ebd5fac8b7bce409"
+    },
+    {
+      "path": "runtime/uefi/kbl_adb_usb.c",
+      "beforeSha256": "62aa988755de1423fb31cc20a1c90348a49559f6ffcef1721c66a0ff269ff5bb",
+      "hnublSha256": "5b490c2243149c1737e00d582fb450dc5a3d7e7e5ac25f7e4b90013b2cbacc91",
+      "afterSha256": "5b490c2243149c1737e00d582fb450dc5a3d7e7e5ac25f7e4b90013b2cbacc91"
+    },
+    {
+      "path": "runtime/uefi/kbl_adb_usb.h",
+      "beforeSha256": "8dfd8a7b042bcbf6d7c10bac638ace5e47316bf9fb9071a86c8d8964392c6501",
+      "hnublSha256": "b4a624c19a597280a96c08fbfaa4b2719ae8a910ec245624654e01636bee835c",
+      "afterSha256": "b4a624c19a597280a96c08fbfaa4b2719ae8a910ec245624654e01636bee835c"
+    },
+    {
+      "path": "runtime/uefi/kbl_clearstart_driver.inc",
+      "beforeSha256": null,
+      "hnublSha256": "cf1b51488d7be4caaffa3eb9892983f9447c26cfed2152314d2f266d1bcd8d80",
+      "afterSha256": "87c875d8f5113f9f86123780bba521b3477adc45d1acd76a8a398eee70817a0b"
+    },
+    {
+      "path": "runtime/uefi/kbl_driver.c",
+      "beforeSha256": "191fdbdab87a98e77628df269c16033b447d6402a4916234f0af7cf99fefcf84",
+      "hnublSha256": "03811763d20efccb1111ef43e006439e0a68fa90a485f432442a45045f5b8715",
+      "afterSha256": "f413334370a31b562bc033e4f05390f9b66114df067ade7f8249706d521a94c0"
+    },
+    {
+      "path": "runtime/uefi/kbl_efi_run.c",
+      "beforeSha256": "133173b139e413eeddbc9d38153f6ab49c1f0f464f70cc3a628a0dcd406dd9ed",
+      "hnublSha256": "18ed103d16949857f93dea482280b1dc27b1e096b73a1c81e46e62a9a21e9ec6",
+      "afterSha256": "18ed103d16949857f93dea482280b1dc27b1e096b73a1c81e46e62a9a21e9ec6"
+    },
+    {
+      "path": "runtime/uefi/kbl_efi_run.h",
+      "beforeSha256": "88def834aa997359967e33255eaed40259403e44962012a2b2f4d6ab064d5739",
+      "hnublSha256": "90df15a6472958aa1c42ec223beca1966ca089d0eb27c6c1b0ac889732fcf171",
+      "afterSha256": "90df15a6472958aa1c42ec223beca1966ca089d0eb27c6c1b0ac889732fcf171"
+    },
+    {
+      "path": "runtime/uefi/kbl_errorcount.c",
+      "beforeSha256": null,
+      "hnublSha256": "c82b37364bd57d7d4068eff633cc309db048c8c846ace6f96e0a821a5e35824c",
+      "afterSha256": "c82b37364bd57d7d4068eff633cc309db048c8c846ace6f96e0a821a5e35824c"
+    },
+    {
+      "path": "runtime/uefi/kbl_errorcount.h",
+      "beforeSha256": null,
+      "hnublSha256": "aecb4eed0e3ab209f91d5e0fbc20942a1495412e3a06a658c5a72bfd0b751311",
+      "afterSha256": "aecb4eed0e3ab209f91d5e0fbc20942a1495412e3a06a658c5a72bfd0b751311"
+    },
+    {
+      "path": "runtime/uefi/kbl_handoff.c",
+      "beforeSha256": null,
+      "hnublSha256": "85f476c821c99a9d2161a69e9b96410ee593ea270ff080830aa21ae65d5725dd",
+      "afterSha256": "85f476c821c99a9d2161a69e9b96410ee593ea270ff080830aa21ae65d5725dd"
+    },
+    {
+      "path": "runtime/uefi/kbl_handoff.h",
+      "beforeSha256": null,
+      "hnublSha256": "b1429f232b0d64fd8e255911b66274c6a8cf96796a73cda023d57473bb17e4b2",
+      "afterSha256": "b1429f232b0d64fd8e255911b66274c6a8cf96796a73cda023d57473bb17e4b2"
+    },
+    {
+      "path": "runtime/uefi/kbl_parent_shim.c",
+      "beforeSha256": "9e49bd3b468609dc900984b1decfa108d5be52e9e196683db67167ba6aeeaceb",
+      "hnublSha256": "a8a4c7e0cf3e97e2ace42bd39220c9ff8800f7d338d7a6b5a7bfee358cb6d061",
+      "afterSha256": "a8a4c7e0cf3e97e2ace42bd39220c9ff8800f7d338d7a6b5a7bfee358cb6d061"
+    },
+    {
+      "path": "runtime/uefi/kbl_usb_native.c",
+      "beforeSha256": "97f083e2f9c891b33b1600832a965a820b1333b06a07f6fcdbab079cf6ee0b77",
+      "hnublSha256": "39fdff9bd5f32a10f68c6be12b0dc0da6fdf79c7c813c72c9a1e39b62eb64206",
+      "afterSha256": "39fdff9bd5f32a10f68c6be12b0dc0da6fdf79c7c813c72c9a1e39b62eb64206"
+    },
+    {
+      "path": "runtime/uefi/kbl_usb_native.h",
+      "beforeSha256": "bf657c041d0af6301b7e3c58e037e8471f44e4ce5f864cd12f2fde2c7ee408e5",
+      "hnublSha256": "1046868be3db4e30170517d5de4f39b56ab1329ef1afdc50332663847b372b58",
+      "afterSha256": "1046868be3db4e30170517d5de4f39b56ab1329ef1afdc50332663847b372b58"
     },
     {
       "path": "runtime/uefi/test_boot_recovery.py",
-      "beforeSha256": "e1470eeff75e324de4e1c31f35de09d4979c4ac9f1b8637036cd0bb49a8b4311",
-      "afterSha256": "4e4722769e00051e49b14c4ffc56892e6dd726d7a1abb4536e2e5ab0f959f1f6"
+      "beforeSha256": "4e4722769e00051e49b14c4ffc56892e6dd726d7a1abb4536e2e5ab0f959f1f6",
+      "hnublSha256": "318bc7502b62d30b925a88684805613c1d2565285348ec1e7844a16d068d9021",
+      "afterSha256": "cb8029ac8a9d42ddbc2517cd398078066ec105df58617c3d8babba2141041882"
     },
     {
-      "path": "runtime/uefi/test_boot_recovery_gates.py",
-      "beforeSha256": "04796835e86b3b263291718ee032869a0fca429ac58b64a07bed8e0642c35d29",
-      "afterSha256": "eaaddf55be8d09f764f1c0f3f1aa798f194ed3ea25be54aa3d6faadea021590c"
+      "path": "runtime/uefi/tests/errorcount_recovery_fixture.c",
+      "beforeSha256": null,
+      "hnublSha256": "aa41b42256536f53507761335fe79890ca2707a836c78a69a00576ab62ff6cf2",
+      "afterSha256": "aa41b42256536f53507761335fe79890ca2707a836c78a69a00576ab62ff6cf2"
     },
     {
-      "path": "runtime/uefi/tests/fastboot_driver_tcp.py",
-      "beforeSha256": "c6e00446fa20ddf1e3a995cdd246ff08301404a22e0ec10cf4451fd163698744",
-      "afterSha256": "69b108b86f681015c69248d5c8ac8895bfb762c6d1852e5f07df941d95c287f5"
+      "path": "runtime/uefi/tests/run_clearstart.py",
+      "beforeSha256": null,
+      "hnublSha256": "1a105c3efc8fc890a009420fad2273d018a4a0d2a32c0eeba7c21812d47ef069",
+      "afterSha256": "0ca8edd14c6656eb6ba6739a8e684a22682e09fbdc580b44ee0c3fc55119a6b7"
     },
     {
-      "path": "runtime/uefi/tests/run_adb_usb.py",
-      "beforeSha256": "27a687ccfea3f578fb0a6dd3ac09fa03329f32694f8ae639c51ec01b9b02b0c2",
-      "afterSha256": "35d09a175cbf24149b1435d8f5d915c7672e82ca7a9b6cdc2d224a51a9bb06f2"
+      "path": "runtime/uefi/tests/test_adb_usb.c",
+      "beforeSha256": "86eceaa5e06e237db727cd10e6c5a148555b535bba0fdda0fe90a5b241ccb490",
+      "hnublSha256": "a8c25da9a9f0a10a89ebc8c1665104fb0b0b95a17362d27b378c58c38c3760cc",
+      "afterSha256": "08655d1751253d3b368b3f86d6aaac008eff763051c85b11c3b9f9de3c3c3b14"
     },
     {
-      "path": "runtime/uefi/tests/run_dxe_memory.py",
-      "beforeSha256": "26aba505625a5ec74516badcf922770b8bb5b334c57bdafb42a1bdd2b716d2cd",
-      "afterSha256": "6ec18ad6e25746d1ebd00a2dfbded23d90892c91aaa14192e4face8ef63f24c1"
+      "path": "runtime/uefi/tests/test_clearstart.c",
+      "beforeSha256": null,
+      "hnublSha256": "2d568846c81ea438499db344f350ded493f1bac356ff66c5df60c4335d46239c",
+      "afterSha256": "56e264e203cb8bef5c7163db22deff0d60cf4b21bc1bae4eee275ac241a5c90d"
     },
     {
-      "path": "runtime/uefi/tests/test_driver_adb_legacy_usb.py",
-      "beforeSha256": "cc6d6d84de0df91192adc546fc1f18ec1bda2ba5754ab2a7d725507f3a5d568a",
-      "afterSha256": "0800b5458b1950001ff5276b45ad27fa73278a1e7b68714260c3c0cd67453d10"
+      "path": "runtime/uefi/tests/test_clearstart_adb_unicorn.py",
+      "beforeSha256": null,
+      "hnublSha256": "eb6014db94fea104aa50110c0cb522c605331b1b39c5a9904cf7d01c73eab654",
+      "afterSha256": "de983ef65cf18c6ae2c427f0d11863298ebb8e0fa657e10fa6e92560e2d10d35"
     },
     {
-      "path": "runtime/uefi/tests/test_driver_adb_lifecycle.py",
-      "beforeSha256": "da4aecb09da2185362e1863f099c94eed9a6ffddeebe86a1e03eb3cd39521756",
-      "afterSha256": "8ad62c932f4049c6b6a4d75046e76ca57f63bae2d7f511ac12fb241f3ac97722"
+      "path": "runtime/uefi/tests/test_clearstart_unicorn.py",
+      "beforeSha256": null,
+      "hnublSha256": "9f6ba2b48408019b6152d15afecf702d5b292eec357998ffc41eb4a8d61b6c37",
+      "afterSha256": "095192c1ecb3349787a6e9e53c1efe1c9e85e47d2fef669225f50ea43554af6f"
     },
     {
-      "path": "runtime/uefi/tests/test_driver_adb_multi.py",
-      "beforeSha256": "1bc30ca80d3ee797192543d5bc6c5a820dbcb3b37fa60912af82b97b3c898b64",
-      "afterSha256": "488e0b2cc0c8e7963327bbf094ad0ae3c99a7609cacbc900ffb8ffe029a315ed"
-    },
-    {
-      "path": "runtime/uefi/tests/test_driver_adb_park.py",
-      "beforeSha256": "fd02b3de3083187ec7b512da45c63ed22b60df74f0517c8435b72f404d7c5a10",
-      "afterSha256": "faf6d3d99740bceecbbc2948eb657c94e61b2a222d711cb30a956335c73eb15f"
+      "path": "runtime/uefi/tests/test_driver.c",
+      "beforeSha256": "d4c18291806b371644da8290c6614ea709582bae1da08b97bd78a7498d6bb0f3",
+      "hnublSha256": "5a7915a81f0318701ab818f6a442939c57727555780df5c122f8e0f1e6de33be",
+      "afterSha256": "5a7915a81f0318701ab818f6a442939c57727555780df5c122f8e0f1e6de33be"
     },
     {
       "path": "runtime/uefi/tests/test_driver_adb_unicorn.py",
-      "beforeSha256": "c38fa6eac3696edf04a5de754d3b3142753fca085302a19c144d17ce2718ddaa",
-      "afterSha256": "8d360a69c0363cf2b9eb3fe25f79b752abdbab4096e91de2258b46a87ce7b49a"
+      "beforeSha256": "8d360a69c0363cf2b9eb3fe25f79b752abdbab4096e91de2258b46a87ce7b49a",
+      "hnublSha256": "e790c747bdd9a1d23df51395bbe83144b5a3dc6cd31bc2db74c9d8bf9c264d81",
+      "afterSha256": "55fe4a9407aa2e8f1c4ff81ca36ff0ac3a1bf73a9df323b752890137e1dc7c4d"
     },
     {
       "path": "runtime/uefi/tests/test_driver_runner.py",
-      "beforeSha256": "5d42181aa94c32dffcdf84ea5602cc93c64518465959208e916beb2ffc4a22bf",
-      "afterSha256": "1022358193cbd96782a98005960270bfa3581ea13cee26fd22da6b414186256c"
+      "beforeSha256": "1022358193cbd96782a98005960270bfa3581ea13cee26fd22da6b414186256c",
+      "hnublSha256": "ca1f9d51271bf86f1fc4443cd562e0f112091135509abea0cfa6e24bff4506f3",
+      "afterSha256": "ae12b2a0332ee61cc45e43ae2642db4329a717aa871ddcb0c189ff2637346561"
     },
     {
-      "path": "runtime/uefi/tests/test_native_usb_runner.py",
-      "beforeSha256": "d0aa3b7bc3fceb7be1a78a6b01b36ed5c4cb10fa9cd16499b90df609be2a16d8",
-      "afterSha256": "7141510948382312f3bde826865215b20665e1d3ca534b37611323802bd1ff25"
+      "path": "runtime/uefi/tests/test_efi_run.c",
+      "beforeSha256": "1b93cc116e4b7f17d6381be798d13d285cef3397c0c3210dd4115c669b05650f",
+      "hnublSha256": "52204045f3c9464145203ecd27d5af76faa1eef48fd0312965f5051c5ccdb438",
+      "afterSha256": "52204045f3c9464145203ecd27d5af76faa1eef48fd0312965f5051c5ccdb438"
     },
     {
-      "path": "runtime/uefi/tests/test_native_usb_tcp.py",
-      "beforeSha256": "0dd9f508c20020c60057ff04b06610347a7e80f231b94a767f810899d17343e9",
-      "afterSha256": "db8f610044535b6a6570555fb3b3ae0e04143c74a2f4028a675d8cbee2d963fa"
-    },
-    {
-      "path": "runtime/adb/README.md",
-      "beforeSha256": "9971eeded0abc3250bc2af59a1640294554d521b37c1d45e9694c4a6fdff3854",
-      "afterSha256": "cedb73eeccedb29e2f3ddb1d919dec170bacc5ea372a2796f6dd75e95cdaaab0"
-    },
-    {
-      "path": "runtime/fs/MOUNT.md",
-      "beforeSha256": "7d2eb4fdf0680114406c0dcccdcf87ed3f6a821836b1d0992752c0afc9675ba5",
-      "afterSha256": "190789c63d66b61776b7a2852acfd425403cbc04f126221730169f75d5c9ef5f"
-    },
-    {
-      "path": "tools/kbl_console/README.md",
-      "beforeSha256": "eccfb82a72b1261c05d78faae51c6d2860d409a099c932e17bedbdc5bde69f6f",
-      "afterSha256": "a33ffa3613559c1fea6c68ea954a26fbf64111155b93212fd99407f44effff23"
+      "path": "runtime/uefi/tests/test_errorcount.py",
+      "beforeSha256": null,
+      "hnublSha256": "c62439e8a7ec63769b14919077320a9e6655e8a50d4a91e18d2a90a402ee298e",
+      "afterSha256": "61a34f11e44819c796c7cf06599d6e2746abe1caf743ab8735c92c07605a152b"
     }
   ],
-  "runtimeCodeByteIdentical": true,
-  "runtimeCodeFiles": 154,
-  "thirdPartyByteIdentical": true,
-  "thirdPartyFiles": 111,
-  "changes": [
-    "29 Python build/test portability edits",
-    "new driver_adapter callback bridge, template and tests",
-    "standalone entry, documentation and source checksums",
-    "KernelBL 1.0.0 documentation corrects legacy capacity notes, dynamic ADB channels and explicit kbladb activation; implementation source remains unchanged."
-  ]
+  "scope": "KBL runtime, standalone recovery module and host tests; app-side ABL/EFISP patcher integration and VM DTBO selection are separate.",
+  "wrapperImplementationChanged": false
 }

@@ -20,10 +20,10 @@ def main():
     p.add_argument('--llvm-bin',type=Path,default=Path('D:/AndroidSDK/ndk/android-ndk-r29/toolchains/llvm/prebuilt/windows-x86_64/bin'))
     p.add_argument('--host-clang',default='clang')
     p.add_argument('--build-dir',type=Path,default=SOURCE/'build/kbl-driver')
-    p.add_argument('--report-dir',type=Path,default=WORKSPACE/'build/tests/kbl-services-20261030/storage/driver-regression')
+    p.add_argument('--report-dir',type=Path,default=WORKSPACE/'build/tests/driver-regression')
     a=p.parse_args();a.report_dir.mkdir(parents=True,exist_ok=True);a.build_dir.mkdir(parents=True,exist_ok=True)
     builder=module('kbl_driver_builder',HERE.parent/'build_driver.py');artifact=builder.build(a.llvm_bin,a.build_dir)
-    sources=[HERE/'test_driver.c',RUNTIME/'kbl_control.c',RUNTIME/'kbl_fetch.c',RUNTIME/'kbl_sha256.c',HERE.parent/'kbl_partition.c',HERE.parent/'kbl_usb.c',HERE.parent/'kbl_usb_native.c',HERE.parent/'kbl_adb_usb.c',RUNTIME/'adb/kbl_adb.c',HERE.parent/'kbl_dxe_memory.c',HERE.parent/'kbl_arch_memory.c',HERE.parent/'kbl_efi_run.c',HERE.parent/'kbl_display.c']
+    sources=[HERE/'test_driver.c',RUNTIME/'kbl_control.c',RUNTIME/'kbl_fetch.c',RUNTIME/'kbl_sha256.c',HERE.parent/'kbl_partition.c',HERE.parent/'kbl_usb.c',HERE.parent/'kbl_usb_native.c',HERE.parent/'kbl_adb_usb.c',RUNTIME/'adb/kbl_adb.c',HERE.parent/'kbl_dxe_memory.c',HERE.parent/'kbl_arch_memory.c',HERE.parent/'kbl_efi_run.c',HERE.parent/'kbl_errorcount.c',HERE.parent/'kbl_display.c']
     executable=a.build_dir/'test_driver.exe'
     command=[a.host_clang,'-std=c11','-O2','-Wall','-Wextra','-Werror',*[str(s)for s in sources],'-o',str(executable)]
     subprocess.run(command,check=True)

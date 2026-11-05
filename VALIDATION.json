@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "sourceVersion": "hnubl 2.9.2",
+  "version": "1.1.0",
   "host": "Windows",
   "python": "3.12.10",
   "crossCompiler": "Android NDK r29 Clang/LLD",
@@ -13,19 +13,20 @@
     "efi-apps",
     "bundle"
   ],
-  "driverSha256": "71570bc527edbecffdab4fe5cabc0e10d7b954daacc0a8e344892a7b33468a12",
-  "driverByteIdenticalToHnubl": true,
-  "controllerCases": 39,
-  "fetchCases": 21,
-  "elfHostCases": 14,
-  "elfUnicornCases": 17,
+  "driverSha256": "06773f93b8ac16796bb8b47c3cd15fbb88d3f0449f8dad1e456ceb497d8629f2",
+  "driverByteIdenticalToHnubl3_0_5": true,
   "driverHostCases": 18,
-  "driverHostAssertions": 908,
+  "driverHostAssertions": 910,
   "driverArm64PeCases": 2,
   "nativeUsbModelCases": 3,
-  "driverAdapterHostChecks": 53,
-  "driverAdapterArm64Compilation": true,
+  "clearstartHostCases": 10,
+  "clearstartHostAssertions": 472,
+  "clearstartArm64Cases": 4,
+  "clearstartAdbArm64Cases": 2,
+  "errorcountHostCases": 50,
+  "recoveryArm64Cases": 64,
+  "hostWrapperCases": 92,
   "deviceOperations": false,
   "newHardwarePortClaimed": false,
-  "limitations": "Host provider models and ARM64 emulation do not establish a new board's firmware/USB/DMA integration."
+  "limitations": "Firmware, DMA and hardware provider behavior are modeled; no new physical board acceptance was performed for this standalone release."
 }

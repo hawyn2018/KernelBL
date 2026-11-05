@@ -1,64 +1,20 @@
 {
   "project": "KernelBL",
-  "version": "1.0.0",
-  "date": "2026-11-03",
+  "version": "1.1.0",
+  "date": "2026-11-06",
   "numericKblAbi": 1,
   "baseProject": "hnubl",
-  "baseVersion": "2.9.2",
-  "standaloneSourceArchive": "KBL-hnubl-2.9.2-source-driver-sdk.zip",
-  "standaloneSourceArchiveSha256": "bbb111c1eb2d5b0b349aa5eb5203e22b1691470a47b484ef96405545dedb5709",
-  "changedBaselineFiles": [
-    {
-      "path": ".gitignore",
-      "beforeSha256": "9409c505cfcbad4850d24682ccf8a72ee0fb609658bee83ac97fcb90209fa530",
-      "afterSha256": "c1e5a8afe084fb66b6d435558bcf725a79029b287f74fe158bf70527817e5ccd"
-    },
-    {
-      "path": "README.md",
-      "beforeSha256": "096f9dc9751e6ac4598fc30b8c3b12aeb78b5b28cef0f00d408e4aaf63010c5a",
-      "afterSha256": "0837e120b203e9e488eac730a61a4ee33145ea903fe3d831c0dfd519656e168d"
-    },
-    {
-      "path": "runtime/adb/README.md",
-      "beforeSha256": "9971eeded0abc3250bc2af59a1640294554d521b37c1d45e9694c4a6fdff3854",
-      "afterSha256": "cedb73eeccedb29e2f3ddb1d919dec170bacc5ea372a2796f6dd75e95cdaaab0"
-    },
-    {
-      "path": "runtime/fs/MOUNT.md",
-      "beforeSha256": "7d2eb4fdf0680114406c0dcccdcf87ed3f6a821836b1d0992752c0afc9675ba5",
-      "afterSha256": "190789c63d66b61776b7a2852acfd425403cbc04f126221730169f75d5c9ef5f"
-    },
-    {
-      "path": "tools/kbl_console/README.md",
-      "beforeSha256": "eccfb82a72b1261c05d78faae51c6d2860d409a099c932e17bedbdc5bde69f6f",
-      "afterSha256": "a33ffa3613559c1fea6c68ea954a26fbf64111155b93212fd99407f44effff23"
-    }
+  "baseVersion": "3.0.5",
+  "runtimeIntroducedIn": "3.0.2",
+  "previousRelease": "v1.0.0",
+  "sourceArchiveSha256": "23dc920446d772cf2a7c486519e25a65b201cb5922356bd2d893c08851643fea",
+  "commands": [
+    "efi -cs",
+    "efi --clearstart",
+    "clear errorcount"
   ],
-  "addedPublicationFiles": [
-    ".gitattributes",
-    "assets/kernelbl-brand-preview.png",
-    "assets/kernelbl-icon-1024.png",
-    "assets/kernelbl-icon.svg",
-    "assets/kernelbl-mark.svg",
-    "assets/kernelbl-mono.svg",
-    "assets/kernelbl-white.svg",
-    "assets/README.md",
-    "CHANGELOG.md",
-    "tools/kbl_console/QUICKSTART.md",
-    "tools/package_release.py",
-    "VERSION"
-  ],
-  "runtimeImplementationFilesChecked": 154,
-  "runtimeImplementationUnchanged": true,
-  "thirdPartyFilesChecked": 111,
-  "thirdPartyUnchanged": true,
-  "hostWrapperTests": {
-    "passed": true,
-    "cases": 92,
-    "deviceOperations": false
-  },
   "releaseAssets": [
-    "KernelBL-v1.0.0-source.zip",
+    "KernelBL-v1.1.0-source.zip",
     "run_kbl_fastboot_shell.zip",
     "SHA256SUMS.txt"
   ],
@@ -67,6 +23,7 @@
     "signing keys",
     "credentials",
     "device runtime logs",
+    "device images",
     "build outputs"
   ]
 }

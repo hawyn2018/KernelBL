@@ -9,7 +9,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-STAMP = (2026, 11, 3, 0, 0, 0)
+STAMP = (2026, 11, 6, 0, 0, 0)
 
 
 def archive(path, entries):

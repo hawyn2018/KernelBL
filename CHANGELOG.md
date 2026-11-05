@@ -1,5 +1,25 @@
 # Changelog / 更新记录
 
+## 1.1.0 — 2026-11-06
+
+### 中文
+
+- 同步 hnubl 3.0.2 引入并保留在 3.0.5 的 KBL 运行时更新。KBL ABI 1 和现有 Fastboot 包装器协议保持兼容。
+- 新增 `efi -cs` / `efi --clearstart`。启动目标 EFI 前排空本次任务输出、清理 KBL 会话和资源，停止旧 USB 接收，并由独立 EFI 载入器完成交接。可以与 `-bl` 组合。
+- 改进 ADB 兼容性，处理旧版 Windows ADB 的 USB 读取，并在 EFI 交接时等待接收完成、恢复 Fastboot USB 描述符。
+- 新增 `clear errorcount`，用于清除并回读工具私有的启动失败计数。
+- 手动 `fastboot continue` 调用的 `BootLinux` 返回时，保留原生返回状态和清理流程。
+- Release 分开提供完整源码与 `run_kbl_fastboot_shell.zip`，并附 SHA-256 校验文件。
+
+### English
+
+- Syncs the KBL runtime changes introduced in hnubl 3.0.2 and retained in 3.0.5. The KBL ABI and Fastboot wrapper protocol remain compatible at version 1.
+- Adds `efi -cs` / `efi --clearstart`. This drains job output, cleans up KBL sessions and resources, stops old USB receive activity, and transfers control to a separate EFI loader. It can be combined with `-bl`.
+- Improves USB compatibility with legacy Windows ADB and restores Fastboot descriptors after pending receive operations finish during EFI handoff.
+- Adds `clear errorcount` to clear and verify the private boot-failure record.
+- Preserves the original return status and cleanup if `BootLinux` returns from manual `fastboot continue`.
+- Release assets include complete source, a separate `run_kbl_fastboot_shell.zip`, and SHA-256 checksums.
+
 ## 1.0.0 — 2026-11-03
 
 ### 中文

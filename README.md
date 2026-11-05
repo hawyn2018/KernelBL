@@ -25,7 +25,7 @@ Currently intended for Qualcomm Snapdragon 8e5 devices whose ABL supports loadin
 | 文件与分区 / Files and partitions | VFS、按名访问、`dd`、SHA-256、二进制回读 / VFS, named partition access, `dd`, SHA-256 and binary readback |
 | 文件系统 / Filesystems | FAT/exFAT、ext2/3/4；有限 F2FS 覆盖写；EROFS/LZ4 读取 / FAT/exFAT, ext2/3/4; limited F2FS overwrite; EROFS/LZ4 reads |
 | 原生程序 / Native programs | KBL ABI ARM64 ELF、C 源码移植、`./program` / KBL ABI ARM64 ELF, C source porting, `./program` |
-| UEFI 应用 / UEFI applications | `efi`；兼容镜像支持 `efi -bl` 临时 bootloader 路径 / `efi`; `efi -bl` for a compatible image's temporary bootloader route |
+| UEFI 应用 / UEFI applications | `efi`、`efi -cs` 清理交接，兼容镜像可用 `efi -bl` 选择 bootloader / `efi`, clean handoff with `efi -cs`, and a bootloader route with `efi -bl` for compatible images |
 | 显示与电源 / Display and power | 显式亮灭屏、状态查询和关机 / Explicit screen control, status and shutdown |
 | 驱动适配 / Driver adaptation | UEFI、块设备、USB、可执行内存及板级接口 / UEFI, block, USB, executable-memory and board interfaces |
 
@@ -36,7 +36,7 @@ Currently intended for Qualcomm Snapdragon 8e5 devices whose ABL supports loadin
 
 ### 1. 项目与运行条件
 
-这是 **KernelBL 1.0.0 独立源码版**，来源为 hnubl 2.9.2 中的 KBL。项目版本与 hnubl、Freedom / fakebl 分别管理，原有 KBL 数字 ABI 1 保持。
+这是 **KernelBL 1.1.0 独立源码版**。本版同步 hnubl 3.0.2 引入并在 3.0.5 保留的 KBL 更新。项目版本与 hnubl、Freedom / fakebl 分别管理，原有 KBL 数字 ABI 1 保持。
 
 使用前，需要集成方把驱动和命令入口接入兼容的 ARM64 UEFI / bootloader。构建 `kbl_driver.efi` 只生成驱动文件，下载源码或运行电脑端包装器不会自动给原厂 bootloader 注册 KBL。此仓库提供运行时、平台接口和父引导桥接源码；ABL 功能定位与镜像集成由外部工具完成。
 
@@ -138,9 +138,16 @@ UEFI 应用使用 `LoadImage → LoadOptions → StartImage`：
 efi /tmp/return.efi hello
 efi -bl /tmp/candidate.img
 efi --bootloader /tmp/candidate.img
+efi -cs /tmp/candidate.img
+efi --clearstart --bootloader /tmp/candidate.img
+clear errorcount
 ```
 
 `efi PATH` 保留原行为；`-bl` / `--bootloader` 只为本次加载的兼容 ABL / EFISP **RAM 副本**按功能关系选择 bootloader 路径，源文件和物理分区保持原值。选项放在路径前。无效结构、目标缺失或歧义会在执行前报告错误。子 EFI 应用同步运行，返回后恢复队列；接管 USB、重启或 ExitBootServices 的应用可能改变当前环境。
+
+`-cs` / `--clearstart` 在切换前排空当前任务输出，清理本轮 KBL 会话、挂载、文件、传输和跟踪分配，停止旧 USB 接收，再交由独立 EFI 载入器启动目标。可以和 `-bl` 一起使用。固件仍引用的父镜像和驱动继续驻留，其他会话会断开。
+
+`clear errorcount` 手动清除并回读本工具的私有 `HnublEfispBootFailures` 启动失败记录。手动 `fastboot continue` 调用的 `BootLinux` 若返回，保留原生返回状态与清理流程。
 
 默认 RAMFS、ELF、EFI 文件容量按实际分配能力决定；PE/协议字段宽度、整数溢出和结构边界仍按格式检查。Fastboot 单次 DATA 保留真实的 32 位长度字段，更大传输需使用支持的流式路径。详见 [程序 SDK](runtime/sdk/README.md)、[C 移植层](runtime/compat/README.md)、[会话与 EFI 应用](runtime/uefi/KBL-SESSIONS-APPS.md)。
 
@@ -222,7 +229,7 @@ python -X utf8 -m unittest discover -s tools/kbl_console/tests -v
 
 KernelBL is a freestanding AArch64 runtime for a bootloader or UEFI environment. It provides an explicit command interpreter, a RAM filesystem and shared VFS, partition access through platform providers, cooperative native programs, and optional Fastboot and USB ADB transports.
 
-This first standalone release is derived from the KBL source snapshot shipped with **hnubl 2.9.2**. The standalone release number is separate from the existing **KBL ABI 1**. Existing service operation numbers and the documented program API prefixes are retained.
+KernelBL **1.1.0** incorporates KBL changes introduced in **hnubl 3.0.2** and retained in **3.0.5**. The standalone release number is separate from the existing **KBL ABI 1**. Existing service operation numbers and the documented program API prefixes are retained.
 
 KernelBL runs in the execution environment supplied by its host. It does not boot Linux, provide the Linux syscall ABI, or turn an Android or BusyBox executable into a firmware application. Programs and providers execute with the host's privileges and must follow the documented ownership and cooperative execution contracts.
 
@@ -508,11 +515,18 @@ See [`runtime/fs/MOUNT.md`](runtime/fs/MOUNT.md), [`F2FS-WRITE.md`](runtime/fs/F
 efi /return.efi hello
 efi -bl /candidate.img
 efi --bootloader /candidate.img
+efi -cs /candidate.img
+efi --clearstart --bootloader /candidate.img
+clear errorcount
 ```
 
 Ordinary `efi PATH [ARGS...]` passes the original file to firmware through `LoadImage`, private UTF-16 `LoadOptions`, and `StartImage`. The accepted profile is an AArch64 PE32+ `EFI_APPLICATION`. Firmware authentication remains firmware-owned.
 
 The optional `-bl` / `--bootloader` switch prepares a supported ABL/EFISP **RAM copy** for the bootloader route using the uniquely proved boot-mode assignment. It does not rewrite the source file or a physical partition, and it is not a universal boot-mode switch for arbitrary EFI applications. Missing or ambiguous targets fail before the firmware call. The switch is recognized before the image path; later arguments remain child options.
+
+`-cs` / `--clearstart` drains the current job output, tears down KBL sessions, mounts, files, transfers and tracked allocations, stops the old USB receive path, and passes control to a separate EFI loader. It can be combined with `-bl`. The parent image and driver remain mapped while firmware frames still reference them. Other sessions disconnect.
+
+`clear errorcount` clears and verifies the private `HnublEfispBootFailures` record. If `BootLinux` returns from a manual `fastboot continue`, the native return status and cleanup flow are preserved.
 
 The launcher requests no EL transition and checks the observed EL around firmware calls. Execution is synchronous and exclusive: a returning child allows queued work to continue; other sessions may wait or time out while the child runs. An application that takes over USB, exits Boot Services, boots another environment or does not return changes that environment accordingly. KernelBL does not isolate arbitrary firmware code.
 
@@ -526,7 +540,7 @@ Shell `poweroff` first requests synchronization and then UEFI shutdown. It is di
 
 ### Validation scope
 
-[`VALIDATION.json`](VALIDATION.json) is the source package's build/test record. The starting standalone snapshot records Windows/Python/NDK r29 builds for all seven targets and a driver byte-identical to its hnubl 2.9.2 reference:
+[`VALIDATION.json`](VALIDATION.json) records this release's seven build targets and clearstart, error-count, recovery and wrapper checks. The v1.0.0 standalone snapshot records Windows/Python/NDK r29 builds for all seven targets and a driver byte-identical to its hnubl 2.9.2 reference:
 
 ```text
 71570bc527edbecffdab4fe5cabc0e10d7b954daacc0a8e344892a7b33468a12
@@ -565,13 +579,13 @@ Use [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and the individual file/l
 
 ## 下载与发布 · Downloads and releases
 
-首版 [v1.0.0](https://github.com/hawyn2018/KernelBL/releases/tag/v1.0.0) 附带：
+最新版 [v1.1.0](https://github.com/hawyn2018/KernelBL/releases/tag/v1.1.0) 附带以下文件。
 
-- `KernelBL-v1.0.0-source.zip`：完整源码、驱动适配接口、构建入口、文档和矢量图标。
+- `KernelBL-v1.1.0-source.zip`：完整源码、驱动适配接口、构建入口、文档和矢量图标。
 - `run_kbl_fastboot_shell.zip`：可独立解压使用的电脑端包装器、快速说明、协议说明和许可证。自行准备 Python 与原生 platform-tools，设备需已接入 KBL。
 - `SHA256SUMS.txt`：两个 ZIP 的 SHA-256。
 
-The first release includes the complete source archive and a separate host-wrapper ZIP named **run_kbl_fastboot_shell.zip**. The wrapper uses Python and your separately installed native Fastboot; it requires KBL-enabled firmware. Both archive hashes are published in SHA256SUMS.txt. See the [host quick start](tools/kbl_console/QUICKSTART.md).
+The latest release includes the complete source archive and a separate host-wrapper ZIP named **run_kbl_fastboot_shell.zip**. The wrapper uses Python and your separately installed native Fastboot; it requires KBL-enabled firmware. Both archive hashes are published in SHA256SUMS.txt. See the [host quick start](tools/kbl_console/QUICKSTART.md).
 
 ## 来源、许可证与参与 · Provenance, license and contributing
 

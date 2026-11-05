@@ -32,7 +32,7 @@ sha256sum /tmp/example.bin
 :detach
 ```
 
-环境与数据受设备提供者和实际内存约束。回读目标文件应不存在；设备需实际提供二进制 fetch。命令失败/断连不自动重放写操作。`efi`、挂载、SDK 程序和驱动移植用法见 [完整说明](https://github.com/hawyn2018/KernelBL#中文)。
+环境与数据受设备提供者和实际内存约束。回读目标文件应不存在；设备需实际提供二进制 fetch。命令失败/断连不自动重放写操作。固件支持时，`efi -cs /tmp/image.efi` 会在临时启动前清理当前 KBL 会话，`clear errorcount` 会清除 KBL 私有启动失败记录。`efi`、挂载、SDK 程序和驱动移植用法见 [完整说明](https://github.com/hawyn2018/KernelBL#中文)。
 
 <a id="english"></a>
 ## English
@@ -53,10 +53,10 @@ python kbl_console.py --kbl-native FASTBOOT_EXECUTABLE -s SERIAL oem kblstart
 
 Place wrapper `--kbl-*` options before native Fastboot arguments. `kblstart` starts the environment and attaches the console; `kblin` reattaches. `exit`, Ctrl+C and `:detach` retain the environment. `oem kbloff` explicitly stops it. Enable ADB separately with `oem kbladb`, then use `adb shell`.
 
-Use `:help`, `:status`, `:push LOCAL /tmp/file`, `:pull /tmp/file NEW_LOCAL` and `:pullpart LABEL NEW_LOCAL`. Pull requires a fresh destination and real device fetch support. Transport failure does not automatically replay writes. See the [full English documentation](https://github.com/hawyn2018/KernelBL#english).
+Use `:help`, `:status`, `:push LOCAL /tmp/file`, `:pull /tmp/file NEW_LOCAL` and `:pullpart LABEL NEW_LOCAL`. Pull requires a fresh destination and real device fetch support. Transport failure does not automatically replay writes. On supporting firmware, `efi -cs /tmp/image.efi` cleans up KBL sessions before a temporary EFI launch. `clear errorcount` clears the private KBL boot failure record. See the [full English documentation](https://github.com/hawyn2018/KernelBL#english).
 
 ## Source and license / 源码与许可证
 
-Version: KernelBL **1.0.0**; protocol: **KBL1**. Source: [hawyn2018/KernelBL](https://github.com/hawyn2018/KernelBL/tree/v1.0.0/tools/kbl_console). The included `LICENSE` is the project AGPLv3 text; original source-file notices remain applicable. Protocol details: `KBL_PROTOCOL.md`.
+Version: KernelBL **1.1.0**; protocol: **KBL1**. Source: [hawyn2018/KernelBL](https://github.com/hawyn2018/KernelBL/tree/v1.1.0/tools/kbl_console). The included `LICENSE` is the project AGPLv3 text; original source-file notices remain applicable. Protocol details: `KBL_PROTOCOL.md`.
 
 QQ群：[941336897](https://qm.qq.com/q/8ax2kPeghy) · Telegram：[blroot](https://t.me/blroot)
